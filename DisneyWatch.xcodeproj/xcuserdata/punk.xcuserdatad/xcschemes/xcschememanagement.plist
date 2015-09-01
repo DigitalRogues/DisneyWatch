@@ -4,10 +4,30 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Complication - DisneyWatchApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>DisneyWatch.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>DisneyWatchApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Glance - DisneyWatchApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Notification - DisneyWatchApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +43,11 @@
 			<true/>
 		</dict>
 		<key>BC60AC541B94010700BCEA0D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BC60AC681B94012C00BCEA0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

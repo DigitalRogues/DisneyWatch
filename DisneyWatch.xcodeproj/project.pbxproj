@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC02E3B81B951F91007C15D4 /* MagicIndexRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02E3B71B951F91007C15D4 /* MagicIndexRealmObject.swift */; settings = {ASSET_TAGS = (); }; };
+		BC02E3BA1B951FBD007C15D4 /* IndexGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02E3B91B951FBD007C15D4 /* IndexGet.swift */; settings = {ASSET_TAGS = (); }; };
+		BC02E3BC1B9520B6007C15D4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02E3BB1B9520B6007C15D4 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		BC60AC3A1B94010700BCEA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC391B94010700BCEA0D /* AppDelegate.swift */; };
 		BC60AC3C1B94010700BCEA0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC3B1B94010700BCEA0D /* ViewController.swift */; };
 		BC60AC3F1B94010700BCEA0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC60AC3D1B94010700BCEA0D /* Main.storyboard */; };
@@ -14,6 +17,20 @@
 		BC60AC441B94010700BCEA0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC60AC421B94010700BCEA0D /* LaunchScreen.storyboard */; };
 		BC60AC4F1B94010700BCEA0D /* DisneyWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC4E1B94010700BCEA0D /* DisneyWatchTests.swift */; };
 		BC60AC5A1B94010700BCEA0D /* DisneyWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC591B94010700BCEA0D /* DisneyWatchUITests.swift */; };
+		BC60AC6D1B94012C00BCEA0D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC60AC6B1B94012C00BCEA0D /* Interface.storyboard */; };
+		BC60AC6F1B94012C00BCEA0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC60AC6E1B94012C00BCEA0D /* Assets.xcassets */; };
+		BC60AC761B94012C00BCEA0D /* DisneyWatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BC60AC751B94012C00BCEA0D /* DisneyWatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BC60AC7D1B94012C00BCEA0D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC7C1B94012C00BCEA0D /* InterfaceController.swift */; };
+		BC60AC7F1B94012C00BCEA0D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC7E1B94012C00BCEA0D /* ExtensionDelegate.swift */; };
+		BC60AC811B94012C00BCEA0D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC801B94012C00BCEA0D /* NotificationController.swift */; };
+		BC60AC831B94012C00BCEA0D /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC821B94012C00BCEA0D /* GlanceController.swift */; };
+		BC60AC851B94012C00BCEA0D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC841B94012C00BCEA0D /* ComplicationController.swift */; };
+		BC60AC871B94012C00BCEA0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC60AC861B94012C00BCEA0D /* Assets.xcassets */; };
+		BC60AC8B1B94012C00BCEA0D /* DisneyWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BC60AC691B94012C00BCEA0D /* DisneyWatchApp.app */; };
+		BC60AC9A1B94031B00BCEA0D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC981B94031B00BCEA0D /* RealmSwift.framework */; };
+		BC60AC9B1B94031B00BCEA0D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC981B94031B00BCEA0D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BC60AC9C1B94031B00BCEA0D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC991B94031B00BCEA0D /* Realm.framework */; };
+		BC60AC9D1B94031B00BCEA0D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC991B94031B00BCEA0D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,9 +48,63 @@
 			remoteGlobalIDString = BC60AC351B94010700BCEA0D;
 			remoteInfo = DisneyWatch;
 		};
+		BC60AC771B94012C00BCEA0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC60AC2E1B94010700BCEA0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC60AC741B94012C00BCEA0D;
+			remoteInfo = "DisneyWatchApp Extension";
+		};
+		BC60AC891B94012C00BCEA0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC60AC2E1B94010700BCEA0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC60AC681B94012C00BCEA0D;
+			remoteInfo = DisneyWatchApp;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BC60AC8F1B94012C00BCEA0D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BC60AC761B94012C00BCEA0D /* DisneyWatchApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC60AC931B94012C00BCEA0D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				BC60AC8B1B94012C00BCEA0D /* DisneyWatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC60AC9E1B94031B00BCEA0D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BC60AC9D1B94031B00BCEA0D /* Realm.framework in Embed Frameworks */,
+				BC60AC9B1B94031B00BCEA0D /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BC02E3B71B951F91007C15D4 /* MagicIndexRealmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicIndexRealmObject.swift; sourceTree = "<group>"; };
+		BC02E3B91B951FBD007C15D4 /* IndexGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexGet.swift; sourceTree = "<group>"; };
+		BC02E3BB1B9520B6007C15D4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		BC60AC361B94010700BCEA0D /* DisneyWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisneyWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC60AC391B94010700BCEA0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC60AC3B1B94010700BCEA0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +118,21 @@
 		BC60AC551B94010700BCEA0D /* DisneyWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DisneyWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC60AC591B94010700BCEA0D /* DisneyWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisneyWatchUITests.swift; sourceTree = "<group>"; };
 		BC60AC5B1B94010700BCEA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC60AC691B94012C00BCEA0D /* DisneyWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisneyWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC60AC6C1B94012C00BCEA0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		BC60AC6E1B94012C00BCEA0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC60AC701B94012C00BCEA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC60AC751B94012C00BCEA0D /* DisneyWatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DisneyWatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC60AC7B1B94012C00BCEA0D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		BC60AC7C1B94012C00BCEA0D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		BC60AC7E1B94012C00BCEA0D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		BC60AC801B94012C00BCEA0D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		BC60AC821B94012C00BCEA0D /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		BC60AC841B94012C00BCEA0D /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		BC60AC861B94012C00BCEA0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC60AC881B94012C00BCEA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC60AC981B94031B00BCEA0D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../realm-cocoa/build/watchos/RealmSwift.framework"; sourceTree = "<group>"; };
+		BC60AC991B94031B00BCEA0D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../realm-cocoa/build/watchos/Realm.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +157,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC60AC721B94012C00BCEA0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC60AC9C1B94031B00BCEA0D /* Realm.framework in Frameworks */,
+				BC60AC9A1B94031B00BCEA0D /* RealmSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -80,6 +175,8 @@
 				BC60AC381B94010700BCEA0D /* DisneyWatch */,
 				BC60AC4D1B94010700BCEA0D /* DisneyWatchTests */,
 				BC60AC581B94010700BCEA0D /* DisneyWatchUITests */,
+				BC60AC6A1B94012C00BCEA0D /* DisneyWatchApp */,
+				BC60AC791B94012C00BCEA0D /* DisneyWatchApp Extension */,
 				BC60AC371B94010700BCEA0D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +187,8 @@
 				BC60AC361B94010700BCEA0D /* DisneyWatch.app */,
 				BC60AC4A1B94010700BCEA0D /* DisneyWatchTests.xctest */,
 				BC60AC551B94010700BCEA0D /* DisneyWatchUITests.xctest */,
+				BC60AC691B94012C00BCEA0D /* DisneyWatchApp.app */,
+				BC60AC751B94012C00BCEA0D /* DisneyWatchApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +224,44 @@
 			path = DisneyWatchUITests;
 			sourceTree = "<group>";
 		};
+		BC60AC6A1B94012C00BCEA0D /* DisneyWatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				BC60AC6B1B94012C00BCEA0D /* Interface.storyboard */,
+				BC60AC6E1B94012C00BCEA0D /* Assets.xcassets */,
+				BC60AC701B94012C00BCEA0D /* Info.plist */,
+			);
+			path = DisneyWatchApp;
+			sourceTree = "<group>";
+		};
+		BC60AC791B94012C00BCEA0D /* DisneyWatchApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BC60AC7C1B94012C00BCEA0D /* InterfaceController.swift */,
+				BC60AC7E1B94012C00BCEA0D /* ExtensionDelegate.swift */,
+				BC60AC801B94012C00BCEA0D /* NotificationController.swift */,
+				BC60AC821B94012C00BCEA0D /* GlanceController.swift */,
+				BC60AC841B94012C00BCEA0D /* ComplicationController.swift */,
+				BC02E3B71B951F91007C15D4 /* MagicIndexRealmObject.swift */,
+				BC02E3B91B951FBD007C15D4 /* IndexGet.swift */,
+				BC60AC861B94012C00BCEA0D /* Assets.xcassets */,
+				BC60AC881B94012C00BCEA0D /* Info.plist */,
+				BC60AC7A1B94012C00BCEA0D /* Supporting Files */,
+			);
+			path = "DisneyWatchApp Extension";
+			sourceTree = "<group>";
+		};
+		BC60AC7A1B94012C00BCEA0D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC60AC981B94031B00BCEA0D /* RealmSwift.framework */,
+				BC60AC991B94031B00BCEA0D /* Realm.framework */,
+				BC02E3BB1B9520B6007C15D4 /* SwiftyJSON.swift */,
+				BC60AC7B1B94012C00BCEA0D /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,10 +272,12 @@
 				BC60AC321B94010700BCEA0D /* Sources */,
 				BC60AC331B94010700BCEA0D /* Frameworks */,
 				BC60AC341B94010700BCEA0D /* Resources */,
+				BC60AC931B94012C00BCEA0D /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BC60AC8A1B94012C00BCEA0D /* PBXTargetDependency */,
 			);
 			name = DisneyWatch;
 			productName = DisneyWatch;
@@ -181,6 +320,41 @@
 			productReference = BC60AC551B94010700BCEA0D /* DisneyWatchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		BC60AC681B94012C00BCEA0D /* DisneyWatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC60AC901B94012C00BCEA0D /* Build configuration list for PBXNativeTarget "DisneyWatchApp" */;
+			buildPhases = (
+				BC60AC671B94012C00BCEA0D /* Resources */,
+				BC60AC8F1B94012C00BCEA0D /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC60AC781B94012C00BCEA0D /* PBXTargetDependency */,
+			);
+			name = DisneyWatchApp;
+			productName = DisneyWatchApp;
+			productReference = BC60AC691B94012C00BCEA0D /* DisneyWatchApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		BC60AC741B94012C00BCEA0D /* DisneyWatchApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC60AC8C1B94012C00BCEA0D /* Build configuration list for PBXNativeTarget "DisneyWatchApp Extension" */;
+			buildPhases = (
+				BC60AC711B94012C00BCEA0D /* Sources */,
+				BC60AC721B94012C00BCEA0D /* Frameworks */,
+				BC60AC731B94012C00BCEA0D /* Resources */,
+				BC60AC9E1B94031B00BCEA0D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DisneyWatchApp Extension";
+			productName = "DisneyWatchApp Extension";
+			productReference = BC60AC751B94012C00BCEA0D /* DisneyWatchApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -201,6 +375,12 @@
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = BC60AC351B94010700BCEA0D;
 					};
+					BC60AC681B94012C00BCEA0D = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					BC60AC741B94012C00BCEA0D = {
+						CreatedOnToolsVersion = 7.0;
+					};
 				};
 			};
 			buildConfigurationList = BC60AC311B94010700BCEA0D /* Build configuration list for PBXProject "DisneyWatch" */;
@@ -219,6 +399,8 @@
 				BC60AC351B94010700BCEA0D /* DisneyWatch */,
 				BC60AC491B94010700BCEA0D /* DisneyWatchTests */,
 				BC60AC541B94010700BCEA0D /* DisneyWatchUITests */,
+				BC60AC681B94012C00BCEA0D /* DisneyWatchApp */,
+				BC60AC741B94012C00BCEA0D /* DisneyWatchApp Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +427,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC60AC671B94012C00BCEA0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC60AC6F1B94012C00BCEA0D /* Assets.xcassets in Resources */,
+				BC60AC6D1B94012C00BCEA0D /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC60AC731B94012C00BCEA0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC60AC871B94012C00BCEA0D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +475,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC60AC711B94012C00BCEA0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC60AC811B94012C00BCEA0D /* NotificationController.swift in Sources */,
+				BC60AC7F1B94012C00BCEA0D /* ExtensionDelegate.swift in Sources */,
+				BC60AC851B94012C00BCEA0D /* ComplicationController.swift in Sources */,
+				BC02E3BC1B9520B6007C15D4 /* SwiftyJSON.swift in Sources */,
+				BC02E3B81B951F91007C15D4 /* MagicIndexRealmObject.swift in Sources */,
+				BC60AC7D1B94012C00BCEA0D /* InterfaceController.swift in Sources */,
+				BC60AC831B94012C00BCEA0D /* GlanceController.swift in Sources */,
+				BC02E3BA1B951FBD007C15D4 /* IndexGet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -288,6 +502,16 @@
 			isa = PBXTargetDependency;
 			target = BC60AC351B94010700BCEA0D /* DisneyWatch */;
 			targetProxy = BC60AC561B94010700BCEA0D /* PBXContainerItemProxy */;
+		};
+		BC60AC781B94012C00BCEA0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC60AC741B94012C00BCEA0D /* DisneyWatchApp Extension */;
+			targetProxy = BC60AC771B94012C00BCEA0D /* PBXContainerItemProxy */;
+		};
+		BC60AC8A1B94012C00BCEA0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC60AC681B94012C00BCEA0D /* DisneyWatchApp */;
+			targetProxy = BC60AC891B94012C00BCEA0D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -306,6 +530,14 @@
 				BC60AC431B94010700BCEA0D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BC60AC6B1B94012C00BCEA0D /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC60AC6C1B94012C00BCEA0D /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -462,6 +694,80 @@
 			};
 			name = Release;
 		};
+		BC60AC8D1B94012C00BCEA0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DisneyWatchApp",
+					Extension,
+					"$(PROJECT_DIR)/realm-cocoa/build/watchos",
+				);
+				INFOPLIST_FILE = "DisneyWatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		BC60AC8E1B94012C00BCEA0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DisneyWatchApp",
+					Extension,
+					"$(PROJECT_DIR)/realm-cocoa/build/watchos",
+				);
+				INFOPLIST_FILE = "DisneyWatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		BC60AC911B94012C00BCEA0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DisneyWatchApp_Extension;
+				INFOPLIST_FILE = DisneyWatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		BC60AC921B94012C00BCEA0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DisneyWatchApp_Extension;
+				INFOPLIST_FILE = DisneyWatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -481,6 +787,7 @@
 				BC60AC601B94010700BCEA0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC60AC611B94010700BCEA0D /* Build configuration list for PBXNativeTarget "DisneyWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +796,7 @@
 				BC60AC631B94010700BCEA0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC60AC641B94010700BCEA0D /* Build configuration list for PBXNativeTarget "DisneyWatchUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +805,25 @@
 				BC60AC661B94010700BCEA0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC60AC8C1B94012C00BCEA0D /* Build configuration list for PBXNativeTarget "DisneyWatchApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC60AC8D1B94012C00BCEA0D /* Debug */,
+				BC60AC8E1B94012C00BCEA0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC60AC901B94012C00BCEA0D /* Build configuration list for PBXNativeTarget "DisneyWatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC60AC911B94012C00BCEA0D /* Debug */,
+				BC60AC921B94012C00BCEA0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
