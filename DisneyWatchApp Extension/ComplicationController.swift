@@ -13,6 +13,7 @@ import RealmSwift
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Timeline Configuration
+    var realmToken = NotificationToken()
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
         handler([.None])
@@ -96,12 +97,22 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 //        myDelegate.get
         //update the data into Realm
         IndexGet.getData()
-        
-        //kick off new extended timeline
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        for complication in complicationServer.activeComplications {
-            complicationServer.extendTimelineForComplication(complication)
+        do {
+            // Persist your data easily
+            let realmObj = try Realm()
+            //kick off new extended timeline
+              realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
+                    let complicationServer = CLKComplicationServer.sharedInstance()
+                    for complication in complicationServer.activeComplications {
+                        complicationServer.extendTimelineForComplication(complication)
+                    }
+                })
+            
         }
+        catch{
+            print(error)
+        }
+
 
     }
     
