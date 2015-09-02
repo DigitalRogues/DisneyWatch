@@ -8,17 +8,11 @@
 
 import WatchKit
 import Foundation
+import RealmSwift
 
 
 class IndexGet: NSObject {
     
-    
-    
-   class func parseDR()
-   {
-        
-
-   }
 
     class  func drGET(url: NSURL, callback: ((dlr:String, dca:String, lastUpdated:String)?, NSError!) -> Void)
     {
@@ -88,6 +82,33 @@ class IndexGet: NSObject {
         task.resume()
         
     }
+    
+ class  func getData(){
+        drGET(NSURL(string: "https://disney.digitalrecall.net")!) { (disneyTuple, error) -> Void in
+            
+            //write to realm
+            let magicObj = MagicIndexRealmObject()
+            magicObj.dlrIndex = disneyTuple!.dlr
+            magicObj.dcaIndex = disneyTuple!.dca
+            magicObj.lastUpdated = disneyTuple!.lastUpdated
+            
+            do {
+                // Persist your data easily
+                let realmObj = try Realm()
+                realmObj.write{
+                    print(magicObj)
+                    realmObj.add(magicObj)
+                }
+            }
+            catch{
+                print(error)
+            }
+            
+        }
+        
+        
+    }
+
 
 
 }

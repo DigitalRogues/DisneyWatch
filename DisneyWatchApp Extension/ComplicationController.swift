@@ -86,8 +86,23 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
         // Call the handler with the date when you would next like to be given the opportunity to update your complication content
         //every hour NSDate(timeIntervalSinceNow: 60*60)
-        handler(NSDate(timeIntervalSinceNow: 60*30));
+        handler(NSDate(timeIntervalSinceNow: 60*60));
         
+    }
+    
+    func requestedUpdateDidBegin() {
+        
+//        let myDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
+//        myDelegate.get
+        //update the data into Realm
+        IndexGet.getData()
+        
+        //kick off new extended timeline
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        for complication in complicationServer.activeComplications {
+            complicationServer.extendTimelineForComplication(complication)
+        }
+
     }
     
     // MARK: - Placeholder Templates

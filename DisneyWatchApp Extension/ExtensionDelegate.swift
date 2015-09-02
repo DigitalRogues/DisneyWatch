@@ -17,45 +17,11 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-         getdata()
+         IndexGet.getData()
     }
     
     
-    func getdata(){
-        IndexGet.drGET(NSURL(string: "https://disney.digitalrecall.net")!) { (disneyTuple, error) -> Void in
-            
-            //write to realm
-            let magicObj = MagicIndexRealmObject()
-            magicObj.dlrIndex = disneyTuple!.dlr
-            magicObj.dcaIndex = disneyTuple!.dca
-            magicObj.lastUpdated = disneyTuple!.lastUpdated
-            
-            do {
-                // Persist your data easily
-                let realmObj = try Realm()
-                realmObj.write{
-                    print(magicObj)
-                    realmObj.add(magicObj)
-                }
-            }
-            catch{
-                print(error)
-            }
-            
-            
-            //kick off new extended timeline
-            let complicationServer = CLKComplicationServer.sharedInstance()
-            for complication in complicationServer.activeComplications {
-                complicationServer.extendTimelineForComplication(complication)
-            }
-            //            let server = CLKComplicationServer.sharedInstance()
-            //            print(server.activeComplications)
-            //            server.extendTimelineForComplication(server.activeComplications.first)
-        }
-        
-        
-    }
-
+    
     
     
 
