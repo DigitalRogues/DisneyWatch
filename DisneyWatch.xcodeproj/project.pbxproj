@@ -31,6 +31,7 @@
 		BC60AC9B1B94031B00BCEA0D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC981B94031B00BCEA0D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BC60AC9C1B94031B00BCEA0D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC991B94031B00BCEA0D /* Realm.framework */; };
 		BC60AC9D1B94031B00BCEA0D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC991B94031B00BCEA0D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BC907B7D1B9B554D00F282FC /* DCAInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC907B7C1B9B553500F282FC /* DCAInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		BC60AC881B94012C00BCEA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC60AC981B94031B00BCEA0D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../realm-cocoa/build/watchos/RealmSwift.framework"; sourceTree = "<group>"; };
 		BC60AC991B94031B00BCEA0D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../realm-cocoa/build/watchos/Realm.framework"; sourceTree = "<group>"; };
+		BC907B7C1B9B553500F282FC /* DCAInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DCAInterfaceController.swift; path = ../DisneyWatchApp/DCAInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 		BC60AC791B94012C00BCEA0D /* DisneyWatchApp Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BC907B7C1B9B553500F282FC /* DCAInterfaceController.swift */,
 				BC60AC7C1B94012C00BCEA0D /* InterfaceController.swift */,
 				BC60AC7E1B94012C00BCEA0D /* ExtensionDelegate.swift */,
 				BC60AC801B94012C00BCEA0D /* NotificationController.swift */,
@@ -361,6 +364,7 @@
 		BC60AC2E1B94010700BCEA0D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Digital Rogues";
 				TargetAttributes = {
@@ -486,6 +490,7 @@
 				BC02E3B81B951F91007C15D4 /* MagicIndexRealmObject.swift in Sources */,
 				BC60AC7D1B94012C00BCEA0D /* InterfaceController.swift in Sources */,
 				BC60AC831B94012C00BCEA0D /* GlanceController.swift in Sources */,
+				BC907B7D1B9B554D00F282FC /* DCAInterfaceController.swift in Sources */,
 				BC02E3BA1B951FBD007C15D4 /* IndexGet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -745,13 +750,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = DisneyWatchApp_Extension;
 				INFOPLIST_FILE = DisneyWatchApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DisneyWatchApp/DisneyWatchApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -761,14 +770,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = DisneyWatchApp_Extension;
 				INFOPLIST_FILE = DisneyWatchApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DisneyWatchApp/DisneyWatchApp-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};

@@ -66,6 +66,8 @@ class IndexGet: NSObject {
                 disneyTuple.dca = dca
             }
             
+            
+            
             if let lastUpdated = json["lastUpdated"].number{
                // print(lastUpdated)
                 disneyTuple.lastUpdated = lastUpdated.stringValue

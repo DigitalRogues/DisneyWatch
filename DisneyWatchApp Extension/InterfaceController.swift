@@ -8,14 +8,46 @@
 
 import WatchKit
 import Foundation
+import RealMSwift
 
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet var openLabel: WKInterfaceLabel!
+    @IBOutlet var outlookLabel: WKInterfaceLabel!
+    @IBOutlet var indexLabel: WKInterfaceLabel!
+    var realmToken = NotificationToken()
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        // Configure interface objects here.
         
         // Configure interface objects here.
+        do {
+            // Persist your data easily
+            let realmObj = try Realm()
+            //kick off new extended timeline
+            
+            realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
+                var magicObj = MagicIndexRealmObject()
+                magicObj = realmObj.objects(MagicIndexRealmObject).sorted("lastUpdated", ascending: false).first!
+                
+                
+            })
+            
+            IndexGet.getData()
+            
+        }
+        catch{
+            print(error)
+        }
+        
+        
+        
+        
+        
+        
+        
     }
 
     override func willActivate() {

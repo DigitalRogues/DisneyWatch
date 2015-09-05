@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Disneyland page-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="DisneyWatchApp" customModuleProvider="target">
+                <controller identifier="Disneyland page" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="DisneyWatchApp" customModuleProvider="target">
                     <items>
                         <group width="1" height="145" alignment="left" layout="vertical" id="1YJ-0c-3hg">
                             <items>
@@ -28,16 +28,45 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="indexLabel" destination="W3k-yZ-sB7" id="hyW-E5-mpz"/>
+                        <outlet property="openLabel" destination="ufY-mR-daI" id="6En-dh-Wlq"/>
+                        <outlet property="outlookLabel" destination="FQW-mR-zw7" id="rqE-01-55p"/>
                         <segue destination="Kdn-Eq-Mlt" kind="relationship" relationship="nextPage" id="XwQ-Cd-oSl"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
         </scene>
-        <!--Interface Controller-->
+        <!--California Adventure-->
         <scene sceneID="AzI-rq-KaR">
             <objects>
-                <controller hidesWhenLoading="NO" id="Kdn-Eq-Mlt"/>
+                <controller identifier="California Adventure" hidesWhenLoading="NO" id="Kdn-Eq-Mlt" customClass="DCAInterfaceController" customModule="DisneyWatchApp_Extension">
+                    <items>
+                        <group width="1" height="145" alignment="left" layout="vertical" id="upV-Zu-MTE">
+                            <items>
+                                <label alignment="center" text="Calfornia Adventure" id="L0F-yJ-AHQ">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </label>
+                                <dateLabel alignment="center" id="ehb-fK-A2g">
+                                    <dateFormatterStyle key="dateStyle" short="YES"/>
+                                </dateLabel>
+                                <label alignment="center" text="time label" id="9yw-eO-Ij1"/>
+                                <label alignment="center" text="outlook label" id="8MH-QD-8K4"/>
+                                <group width="1" alignment="left" id="uVw-Co-tkp">
+                                    <items>
+                                        <label alignment="center" text="crowd Index:" textAlignment="left" id="v4X-p1-4kz"/>
+                                        <label alignment="center" text="99" id="dOB-lo-gEh"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="indexLabel" destination="dOB-lo-gEh" id="rOb-mK-jYG"/>
+                        <outlet property="openLabel" destination="9yw-eO-Ij1" id="GuZ-eP-hTl"/>
+                        <outlet property="outlookLabel" destination="8MH-QD-8K4" id="fDt-hU-npd"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="430" y="347"/>
         </scene>
