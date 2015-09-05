@@ -8,9 +8,38 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="DisneyWatchApp" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="DisneyWatchApp" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="145" alignment="left" layout="vertical" id="1YJ-0c-3hg">
+                            <items>
+                                <label alignment="center" text="Disneyland" id="3PG-Jy-hff"/>
+                                <dateLabel alignment="center" id="5rb-YO-YjN">
+                                    <dateFormatterStyle key="dateStyle" short="YES"/>
+                                </dateLabel>
+                                <label alignment="center" text="time label" id="ufY-mR-daI"/>
+                                <label alignment="center" text="outlook label" id="FQW-mR-zw7"/>
+                                <group width="1" alignment="left" id="AXX-kx-Kis">
+                                    <items>
+                                        <label alignment="center" text="crowd Index:" textAlignment="left" id="wlb-d8-zgy"/>
+                                        <label alignment="center" text="99" id="W3k-yZ-sB7"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="Kdn-Eq-Mlt" kind="relationship" relationship="nextPage" id="XwQ-Cd-oSl"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="AzI-rq-KaR">
+            <objects>
+                <controller hidesWhenLoading="NO" id="Kdn-Eq-Mlt"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="347"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
@@ -20,10 +49,7 @@
                         <group alignment="left" layout="vertical" id="t8f-Gd-c4y">
                             <items>
                                 <label alignment="left" text="Disney Watch" id="CpJ-uF-dgC"/>
-                                <dateLabel alignment="left" textAlignment="center" id="zBd-Jd-1N9">
-                                    <dateFormatterStyle key="dateStyle" short="YES"/>
-                                    <dateFormatterStyle key="timeStyle" short="YES"/>
-                                </dateLabel>
+                                <dateLabel width="136" alignment="left" textAlignment="center" format="M/d, h:mm a" id="zBd-Jd-1N9"/>
                             </items>
                         </group>
                         <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
