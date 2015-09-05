@@ -8,7 +8,7 @@
 
 import WatchKit
 import Foundation
-import RealMSwift
+import RealmSwift
 
 
 class InterfaceController: WKInterfaceController {

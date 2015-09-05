@@ -15,7 +15,7 @@ import ClockKit
 class IndexGet: NSObject {
     
 
-    class  func drGET(url: NSURL, callback: ((dlr:String, dca:String, lastUpdated:String)?, NSError!) -> Void)
+    class  func drGET(url: NSURL, callback: (MagicObject:MagicIndexRealmObject?, NSError!) -> Void)
     {
         
         
@@ -53,27 +53,35 @@ class IndexGet: NSObject {
 
            
            // print(json)
-            var disneyTuple:(dlr:String, dca:String, lastUpdated:String) = (dlr:"",dca:"", lastUpdated:"")
+            let disneyObject = MagicIndexRealmObject()
             
-            if let dlr = json["parks"]["disneyland"]["crowdIndex"].string{
+            if let dlr = json["parks"]["disneyland"].dictionary{
                 //Now you got your value
                 //print(dlr)
-                disneyTuple.dlr = dlr
+                disneyObject.dlrIndex = (dlr["crowdIndex"]?.stringValue)!
+                disneyObject.dlrOpen = (dlr["times"]?.stringValue)!
+                disneyObject.dlrForecast = (dlr["forcast"]?.stringValue)!
             }
             
-            if let dca = json["parks"]["california_adventure"]["crowdIndex"].string{
+            
+            if let dca = json["parks"]["california_adventure"].dictionary{
                 //print(dca)
-                disneyTuple.dca = dca
+                disneyObject.dcaIndex = (dca["crowdIndex"]?.stringValue)!
+                disneyObject.dcaOpen = (dca["times"]?.stringValue)!
+                disneyObject.dcaForecast = (dca["forcast"]?.stringValue)!
             }
             
-            
-            
+        
             if let lastUpdated = json["lastUpdated"].number{
                // print(lastUpdated)
-                disneyTuple.lastUpdated = lastUpdated.stringValue
+                disneyObject.lastUpdated = lastUpdated.stringValue
+            }
+            if let date = json["date"].number{
+                // print(lastUpdated)
+                disneyObject.date = date.stringValue
             }
             
-            callback(disneyTuple,errors)
+            callback(MagicObject: disneyObject,errors)
 
 //            if let dlr = json[0]["parks"]["disneyland"]["crowdIndex"].string{
 //                print(dlr)
@@ -87,20 +95,17 @@ class IndexGet: NSObject {
     }
     
  class  func getData(){
-        drGET(NSURL(string: "https://disney.digitalrecall.net")!) { (disneyTuple, error) -> Void in
+        drGET(NSURL(string: "https://disney.digitalrecall.net")!) { (disneyObject, error) -> Void in
             
             //write to realm
-            let magicObj = MagicIndexRealmObject()
-            magicObj.dlrIndex = disneyTuple!.dlr
-            magicObj.dcaIndex = disneyTuple!.dca
-            magicObj.lastUpdated = disneyTuple!.lastUpdated
+
             
             do {
                 // Persist your data easily
                 let realmObj = try Realm()
                 realmObj.write{
-                    print(magicObj)
-                    realmObj.add(magicObj)
+                    print(disneyObject)
+                    realmObj.add(disneyObject!)
                 }
                 
             }
