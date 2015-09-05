@@ -44,32 +44,40 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             
             //get the data from extensiondelegate after it has kicked off the timeline reload with the .extendtimeline call
             //let myDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
-            var magicObj = MagicIndexRealmObject()
-            do{
-                magicObj = try Realm().objects(MagicIndexRealmObject).sorted("lastUpdated", ascending: false).first!
-            }
+            
+            do {
+                // Persist your data easily
+                let realmObj = try Realm()
+                //kick off new extended timeline
                 
+                realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
+                    var magicObj = MagicIndexRealmObject()
+                    magicObj = realmObj.objects(MagicIndexRealmObject).sorted("lastUpdated", ascending: false).first!
+                   
+                    
+                    let dlrText = magicObj.dlrIndex
+                    let dcaText = magicObj.dcaIndex
+                    // let shortText = data[ComplicationShortTextData]
+                    
+                    let textTemplate = CLKComplicationTemplateModularLargeStandardBody()
+                    textTemplate.headerTextProvider = CLKSimpleTextProvider(text:"disneyWatch")
+                    textTemplate.body1TextProvider = CLKSimpleTextProvider(text:"DLR:\(dlrText)")
+                    textTemplate.body2TextProvider = CLKSimpleTextProvider(text:"DCA:\(dcaText)")
+                    
+                    // Create the entry.
+                    entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: textTemplate)
+                    handler(entry)
+
+                })
+                
+               IndexGet.getData()
+                
+            }
             catch{
                 print(error)
             }
-            
-            let dlrText = magicObj.dlrIndex
-            let dcaText = magicObj.dcaIndex
-            // let shortText = data[ComplicationShortTextData]
-            
-            let textTemplate = CLKComplicationTemplateModularLargeStandardBody()
-            textTemplate.headerTextProvider = CLKSimpleTextProvider(text:"disneyWatch")
-            textTemplate.body1TextProvider = CLKSimpleTextProvider(text:"DLR:\(dlrText)")
-            textTemplate.body2TextProvider = CLKSimpleTextProvider(text:"DCA:\(dcaText)")
-            
-            // Create the entry.
-            entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: textTemplate)
-            
-            
-            
         }
-        handler(entry)
-
+        
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
@@ -87,31 +95,45 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
         // Call the handler with the date when you would next like to be given the opportunity to update your complication content
         //every hour NSDate(timeIntervalSinceNow: 60*60)
-        handler(NSDate(timeIntervalSinceNow: 60*60));
+        let nextUpdateDate:NSDate = NSDate(timeIntervalSinceNow: 3600)
+        
+        handler(nextUpdateDate);
         
     }
     
     func requestedUpdateDidBegin() {
         
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        for complication in complicationServer.activeComplications {
+            complicationServer.extendTimelineForComplication(complication)
+        }
+
+        
+        func requestedUpdateBudgetExhausted()
+        {
+            
+        }
+        
 //        let myDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
 //        myDelegate.get
         //update the data into Realm
-        IndexGet.getData()
-        do {
-            // Persist your data easily
-            let realmObj = try Realm()
-            //kick off new extended timeline
-              realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
-                    let complicationServer = CLKComplicationServer.sharedInstance()
-                    for complication in complicationServer.activeComplications {
-                        complicationServer.extendTimelineForComplication(complication)
-                    }
-                })
-            
-        }
-        catch{
-            print(error)
-        }
+        
+//        do {
+//            // Persist your data easily
+//            let realmObj = try Realm()
+//            IndexGet.getData()
+//            //kick off new extended timeline
+//              realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
+//                    let complicationServer = CLKComplicationServer.sharedInstance()
+//                    for complication in complicationServer.activeComplications {
+//                        complicationServer.extendTimelineForComplication(complication)
+//                    }
+//                })
+//            
+//        }
+//        catch{
+//            print(error)
+//        }
 
 
     }

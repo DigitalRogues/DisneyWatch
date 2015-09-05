@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import RealmSwift
+import ClockKit
 
 
 class IndexGet: NSObject {
@@ -99,6 +100,7 @@ class IndexGet: NSObject {
                     print(magicObj)
                     realmObj.add(magicObj)
                 }
+                
             }
             catch{
                 print(error)

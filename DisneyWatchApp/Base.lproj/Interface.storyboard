@@ -1,26 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8187.4" systemVersion="15A279b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="DisneyWatchApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModuleProvider="target">
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="DisneyWatchApp" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" layout="vertical" id="t8f-Gd-c4y">
+                            <items>
+                                <label alignment="left" text="Disney Watch" id="CpJ-uF-dgC"/>
+                                <dateLabel alignment="left" textAlignment="center" id="zBd-Jd-1N9">
+                                    <dateFormatterStyle key="dateStyle" short="YES"/>
+                                    <dateFormatterStyle key="timeStyle" short="YES"/>
+                                </dateLabel>
+                            </items>
+                        </group>
+                        <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
+                            <items>
+                                <group width="1" alignment="center" verticalAlignment="center" id="wq6-l2-FIq">
+                                    <items>
+                                        <label alignment="center" text="DLR:" textAlignment="center" id="H8T-bB-NJX">
+                                            <fontDescription key="font" type="system" pointSize="27"/>
+                                        </label>
+                                        <label alignment="center" text="99" id="Mjv-cg-Sff">
+                                            <fontDescription key="font" type="system" pointSize="27"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="center" verticalAlignment="center" id="44s-bl-oRf">
+                                    <items>
+                                        <label alignment="center" text="DCA:" id="vOM-Ca-TyB">
+                                            <fontDescription key="font" type="system" pointSize="27"/>
+                                        </label>
+                                        <label alignment="center" text="99" id="U1q-C8-cYC">
+                                            <fontDescription key="font" type="system" pointSize="27"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="dcaLabel" destination="U1q-C8-cYC" id="Gkh-E1-ORV"/>
+                        <outlet property="dlrLabel" destination="Mjv-cg-Sff" id="G8c-89-St9"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>
@@ -44,7 +79,7 @@
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="DisneyWatchApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>

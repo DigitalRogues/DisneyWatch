@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A01AC0CD914BEBBB746121822701ED39B6B8C65B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A01AC0CD914BEBBB746121822701ED39B6B8C65B" : 0,
+    "9FB1FDDBA011002795A1FF5BD3CABFA2F79E6A59" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AC47EA87-FC8C-4D02-851D-1467F34ED0AB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A01AC0CD914BEBBB746121822701ED39B6B8C65B" : "DisneyWatch\/",
+    "9FB1FDDBA011002795A1FF5BD3CABFA2F79E6A59" : "DisneyWatch\/realm-cocoa\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DisneyWatch",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DisneyWatch.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:realm\/realm-cocoa.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9FB1FDDBA011002795A1FF5BD3CABFA2F79E6A59"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:DigitalRogues\/DisneyWatch.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A01AC0CD914BEBBB746121822701ED39B6B8C65B"
+    }
+  ]
+}
