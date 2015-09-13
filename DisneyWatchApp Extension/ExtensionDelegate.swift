@@ -19,28 +19,24 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        let complicationServer = CLKComplicationServer.sharedInstance()
-        for complication in complicationServer.activeComplications {
-            complicationServer.extendTimelineForComplication(complication)
-        }
-//        
-//        do {
-//            // Persist your data easily
-//            let realmObj = try Realm()
-//            //kick off new extended timeline
-//            realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
+       //
+        do {
+            // Persist your data easily
+            let realmObj = try Realm()
+            //kick off new extended timeline
+            realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
 //                let complicationServer = CLKComplicationServer.sharedInstance()
 //                for complication in complicationServer.activeComplications {
 //                    complicationServer.reloadTimelineForComplication(complication)
 //                }
-//            })
-//            
-//        }
-//        catch{
-//            print(error)
-//        }
-//        
-//        IndexGet.getData()
+            })
+            
+        }
+        catch{
+            print(error)
+        }
+        
+        IndexGet.getData()
 
     }
     

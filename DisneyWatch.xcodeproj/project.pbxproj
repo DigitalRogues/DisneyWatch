@@ -384,6 +384,7 @@
 					};
 					BC60AC741B94012C00BCEA0D = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = QJ7W7F4DDC;
 					};
 				};
 			};
@@ -707,6 +708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DisneyWatchApp",

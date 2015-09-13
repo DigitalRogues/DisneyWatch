@@ -60,7 +60,7 @@ class IndexGet: NSObject {
                 //print(dlr)
                 disneyObject.dlrIndex = (dlr["crowdIndex"]?.stringValue)!
                 disneyObject.dlrOpen = (dlr["times"]?.stringValue)!
-                disneyObject.dlrForecast = (dlr["forcast"]?.stringValue)!
+                disneyObject.dlrForecast = (dlr["forecast"]?.stringValue)!
             }
             
             
@@ -68,7 +68,7 @@ class IndexGet: NSObject {
                 //print(dca)
                 disneyObject.dcaIndex = (dca["crowdIndex"]?.stringValue)!
                 disneyObject.dcaOpen = (dca["times"]?.stringValue)!
-                disneyObject.dcaForecast = (dca["forcast"]?.stringValue)!
+                disneyObject.dcaForecast = (dca["forecast"]?.stringValue)!
             }
             
         

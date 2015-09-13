@@ -20,10 +20,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
+
         handler(nil)
     }
     
     func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
+
         handler(nil)
     }
     
@@ -48,8 +50,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             do {
                 // Persist your data easily
                 let realmObj = try Realm()
-                //kick off new extended timeline
-                
                 realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
                     var magicObj = MagicIndexRealmObject()
                     magicObj = realmObj.objects(MagicIndexRealmObject).sorted("lastUpdated", ascending: false).first!
@@ -102,16 +102,21 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func requestedUpdateDidBegin() {
-        
+        print("requestedUpdatedidbeing")
         let complicationServer = CLKComplicationServer.sharedInstance()
         for complication in complicationServer.activeComplications {
-            complicationServer.extendTimelineForComplication(complication)
+            complicationServer.reloadTimelineForComplication(complication)
         }
 
         
         func requestedUpdateBudgetExhausted()
         {
-            
+                print("exhausted")
+            let complicationServer = CLKComplicationServer.sharedInstance()
+            for complication in complicationServer.activeComplications {
+                complicationServer.reloadTimelineForComplication(complication)
+            }
+
         }
         
 //        let myDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
