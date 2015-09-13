@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import RealmSwift
 
 
 class DCAInterfaceController: WKInterfaceController {
@@ -15,12 +16,34 @@ class DCAInterfaceController: WKInterfaceController {
     @IBOutlet var openLabel: WKInterfaceLabel!
     @IBOutlet var outlookLabel: WKInterfaceLabel!
     @IBOutlet var indexLabel: WKInterfaceLabel!
-
+     var realmToken = NotificationToken()
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
         // Configure interface objects here.
+        do {
+            // Persist your data easily
+            let realmObj = try Realm()
+            //kick off new extended timeline
+            
+            realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
+                var magicObj = MagicIndexRealmObject()
+                magicObj = realmObj.objects(MagicIndexRealmObject).sorted("lastUpdated", ascending: false).first!
+                
+                self.openLabel.setText(magicObj.dcaOpen)
+                self.outlookLabel.setText(magicObj.dcaForecast)
+                self.indexLabel.setText(magicObj.dcaIndex)
+            })
+            
+            IndexGet.getData()
+            
+        }
+        catch{
+            print(error)
+        }
+
+        
+
     }
 
     override func willActivate() {

@@ -32,7 +32,9 @@ class InterfaceController: WKInterfaceController {
                 var magicObj = MagicIndexRealmObject()
                 magicObj = realmObj.objects(MagicIndexRealmObject).sorted("lastUpdated", ascending: false).first!
                 
-                
+               self.openLabel.setText(magicObj.dlrOpen)
+                self.outlookLabel.setText(magicObj.dlrForecast)
+                self.indexLabel.setText(magicObj.dlrIndex)
             })
             
             IndexGet.getData()
