@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC02E3B81B951F91007C15D4 /* MagicIndexRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02E3B71B951F91007C15D4 /* MagicIndexRealmObject.swift */; settings = {ASSET_TAGS = (); }; };
-		BC02E3BA1B951FBD007C15D4 /* IndexGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02E3B91B951FBD007C15D4 /* IndexGet.swift */; settings = {ASSET_TAGS = (); }; };
-		BC02E3BC1B9520B6007C15D4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02E3BB1B9520B6007C15D4 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		BC02E3B81B951F91007C15D4 /* MagicIndexRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02E3B71B951F91007C15D4 /* MagicIndexRealmObject.swift */; };
+		BC02E3BC1B9520B6007C15D4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02E3BB1B9520B6007C15D4 /* SwiftyJSON.swift */; };
+		BC49C4951BAE347F0099EE28 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49C4941BAE347F0099EE28 /* ComplicationController.swift */; settings = {ASSET_TAGS = (); }; };
+		BC49C4971BAE34F60099EE28 /* IndexGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49C4961BAE34F60099EE28 /* IndexGet.swift */; settings = {ASSET_TAGS = (); }; };
+		BC4C5B801BAE354B00C19A26 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C5B781BAE354B00C19A26 /* Int+Timepiece.swift */; settings = {ASSET_TAGS = (); }; };
+		BC4C5B811BAE354B00C19A26 /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C5B791BAE354B00C19A26 /* NSCalendar+Timepiece.swift */; settings = {ASSET_TAGS = (); }; };
+		BC4C5B821BAE354B00C19A26 /* NSCalendarUnit+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C5B7A1BAE354B00C19A26 /* NSCalendarUnit+Timepiece.swift */; settings = {ASSET_TAGS = (); }; };
+		BC4C5B831BAE354B00C19A26 /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C5B7B1BAE354B00C19A26 /* NSDate+Timepiece.swift */; settings = {ASSET_TAGS = (); }; };
+		BC4C5B841BAE354B00C19A26 /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C5B7C1BAE354B00C19A26 /* NSDateComponents+Timepiece.swift */; settings = {ASSET_TAGS = (); }; };
+		BC4C5B851BAE354B00C19A26 /* NSTimeInterval+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C5B7D1BAE354B00C19A26 /* NSTimeInterval+Timepiece.swift */; settings = {ASSET_TAGS = (); }; };
+		BC4C5B861BAE354B00C19A26 /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C5B7E1BAE354B00C19A26 /* String+Timepiece.swift */; settings = {ASSET_TAGS = (); }; };
+		BC4C5B871BAE354B00C19A26 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C5B7F1BAE354B00C19A26 /* Duration.swift */; settings = {ASSET_TAGS = (); }; };
 		BC60AC3A1B94010700BCEA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC391B94010700BCEA0D /* AppDelegate.swift */; };
 		BC60AC3C1B94010700BCEA0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC3B1B94010700BCEA0D /* ViewController.swift */; };
 		BC60AC3F1B94010700BCEA0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC60AC3D1B94010700BCEA0D /* Main.storyboard */; };
@@ -24,14 +33,17 @@
 		BC60AC7F1B94012C00BCEA0D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC7E1B94012C00BCEA0D /* ExtensionDelegate.swift */; };
 		BC60AC811B94012C00BCEA0D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC801B94012C00BCEA0D /* NotificationController.swift */; };
 		BC60AC831B94012C00BCEA0D /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC821B94012C00BCEA0D /* GlanceController.swift */; };
-		BC60AC851B94012C00BCEA0D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC60AC841B94012C00BCEA0D /* ComplicationController.swift */; };
 		BC60AC871B94012C00BCEA0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC60AC861B94012C00BCEA0D /* Assets.xcassets */; };
 		BC60AC8B1B94012C00BCEA0D /* DisneyWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BC60AC691B94012C00BCEA0D /* DisneyWatchApp.app */; };
-		BC60AC9A1B94031B00BCEA0D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC981B94031B00BCEA0D /* RealmSwift.framework */; };
-		BC60AC9B1B94031B00BCEA0D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC981B94031B00BCEA0D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BC60AC9C1B94031B00BCEA0D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC991B94031B00BCEA0D /* Realm.framework */; };
-		BC60AC9D1B94031B00BCEA0D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC60AC991B94031B00BCEA0D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BC907B7D1B9B554D00F282FC /* DCAInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC907B7C1B9B553500F282FC /* DCAInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
+		BC85B3421BA921F800D18C84 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85B3411BA921F800D18C84 /* Utilities.swift */; };
+		BC85B3431BA921F800D18C84 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85B3411BA921F800D18C84 /* Utilities.swift */; };
+		BC85B3441BA921F800D18C84 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85B3411BA921F800D18C84 /* Utilities.swift */; };
+		BC85B3451BA921F800D18C84 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85B3411BA921F800D18C84 /* Utilities.swift */; };
+		BC85B3471BA922DE00D18C84 /* MagicIndexObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85B3461BA922DE00D18C84 /* MagicIndexObject.swift */; };
+		BC85B3481BA922DE00D18C84 /* MagicIndexObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85B3461BA922DE00D18C84 /* MagicIndexObject.swift */; };
+		BC85B3491BA922DE00D18C84 /* MagicIndexObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85B3461BA922DE00D18C84 /* MagicIndexObject.swift */; };
+		BC85B34A1BA922DE00D18C84 /* MagicIndexObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85B3461BA922DE00D18C84 /* MagicIndexObject.swift */; };
+		BC907B7D1B9B554D00F282FC /* DCAInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC907B7C1B9B553500F282FC /* DCAInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,24 +100,21 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC60AC9E1B94031B00BCEA0D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BC60AC9D1B94031B00BCEA0D /* Realm.framework in Embed Frameworks */,
-				BC60AC9B1B94031B00BCEA0D /* RealmSwift.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BC02E3B71B951F91007C15D4 /* MagicIndexRealmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicIndexRealmObject.swift; sourceTree = "<group>"; };
-		BC02E3B91B951FBD007C15D4 /* IndexGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexGet.swift; sourceTree = "<group>"; };
 		BC02E3BB1B9520B6007C15D4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		BC49C4941BAE347F0099EE28 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		BC49C4961BAE34F60099EE28 /* IndexGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexGet.swift; sourceTree = "<group>"; };
+		BC4C5B781BAE354B00C19A26 /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
+		BC4C5B791BAE354B00C19A26 /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
+		BC4C5B7A1BAE354B00C19A26 /* NSCalendarUnit+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendarUnit+Timepiece.swift"; sourceTree = "<group>"; };
+		BC4C5B7B1BAE354B00C19A26 /* NSDate+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timepiece.swift"; sourceTree = "<group>"; };
+		BC4C5B7C1BAE354B00C19A26 /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
+		BC4C5B7D1BAE354B00C19A26 /* NSTimeInterval+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+Timepiece.swift"; sourceTree = "<group>"; };
+		BC4C5B7E1BAE354B00C19A26 /* String+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Timepiece.swift"; sourceTree = "<group>"; };
+		BC4C5B7F1BAE354B00C19A26 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		BC60AC361B94010700BCEA0D /* DisneyWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisneyWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC60AC391B94010700BCEA0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC60AC3B1B94010700BCEA0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,11 +138,10 @@
 		BC60AC7E1B94012C00BCEA0D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		BC60AC801B94012C00BCEA0D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		BC60AC821B94012C00BCEA0D /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
-		BC60AC841B94012C00BCEA0D /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		BC60AC861B94012C00BCEA0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC60AC881B94012C00BCEA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC60AC981B94031B00BCEA0D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../realm-cocoa/build/watchos/RealmSwift.framework"; sourceTree = "<group>"; };
-		BC60AC991B94031B00BCEA0D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../realm-cocoa/build/watchos/Realm.framework"; sourceTree = "<group>"; };
+		BC85B3411BA921F800D18C84 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		BC85B3461BA922DE00D18C84 /* MagicIndexObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicIndexObject.swift; sourceTree = "<group>"; };
 		BC907B7C1B9B553500F282FC /* DCAInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DCAInterfaceController.swift; path = ../DisneyWatchApp/DCAInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,14 +171,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC60AC9C1B94031B00BCEA0D /* Realm.framework in Frameworks */,
-				BC60AC9A1B94031B00BCEA0D /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC4C5B881BAE355100C19A26 /* timepiece */ = {
+			isa = PBXGroup;
+			children = (
+				BC4C5B781BAE354B00C19A26 /* Int+Timepiece.swift */,
+				BC4C5B791BAE354B00C19A26 /* NSCalendar+Timepiece.swift */,
+				BC4C5B7A1BAE354B00C19A26 /* NSCalendarUnit+Timepiece.swift */,
+				BC4C5B7B1BAE354B00C19A26 /* NSDate+Timepiece.swift */,
+				BC4C5B7C1BAE354B00C19A26 /* NSDateComponents+Timepiece.swift */,
+				BC4C5B7D1BAE354B00C19A26 /* NSTimeInterval+Timepiece.swift */,
+				BC4C5B7E1BAE354B00C19A26 /* String+Timepiece.swift */,
+				BC4C5B7F1BAE354B00C19A26 /* Duration.swift */,
+				BC02E3BB1B9520B6007C15D4 /* SwiftyJSON.swift */,
+			);
+			name = timepiece;
+			sourceTree = "<group>";
+		};
 		BC60AC2D1B94010700BCEA0D = {
 			isa = PBXGroup;
 			children = (
@@ -239,14 +261,16 @@
 		BC60AC791B94012C00BCEA0D /* DisneyWatchApp Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BC85B3411BA921F800D18C84 /* Utilities.swift */,
 				BC907B7C1B9B553500F282FC /* DCAInterfaceController.swift */,
 				BC60AC7C1B94012C00BCEA0D /* InterfaceController.swift */,
 				BC60AC7E1B94012C00BCEA0D /* ExtensionDelegate.swift */,
 				BC60AC801B94012C00BCEA0D /* NotificationController.swift */,
+				BC49C4941BAE347F0099EE28 /* ComplicationController.swift */,
 				BC60AC821B94012C00BCEA0D /* GlanceController.swift */,
-				BC60AC841B94012C00BCEA0D /* ComplicationController.swift */,
+				BC49C4961BAE34F60099EE28 /* IndexGet.swift */,
+				BC85B3461BA922DE00D18C84 /* MagicIndexObject.swift */,
 				BC02E3B71B951F91007C15D4 /* MagicIndexRealmObject.swift */,
-				BC02E3B91B951FBD007C15D4 /* IndexGet.swift */,
 				BC60AC861B94012C00BCEA0D /* Assets.xcassets */,
 				BC60AC881B94012C00BCEA0D /* Info.plist */,
 				BC60AC7A1B94012C00BCEA0D /* Supporting Files */,
@@ -257,9 +281,7 @@
 		BC60AC7A1B94012C00BCEA0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BC60AC981B94031B00BCEA0D /* RealmSwift.framework */,
-				BC60AC991B94031B00BCEA0D /* Realm.framework */,
-				BC02E3BB1B9520B6007C15D4 /* SwiftyJSON.swift */,
+				BC4C5B881BAE355100C19A26 /* timepiece */,
 				BC60AC7B1B94012C00BCEA0D /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
@@ -347,7 +369,6 @@
 				BC60AC711B94012C00BCEA0D /* Sources */,
 				BC60AC721B94012C00BCEA0D /* Frameworks */,
 				BC60AC731B94012C00BCEA0D /* Resources */,
-				BC60AC9E1B94031B00BCEA0D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -370,6 +391,7 @@
 				TargetAttributes = {
 					BC60AC351B94010700BCEA0D = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = QJ7W7F4DDC;
 					};
 					BC60AC491B94010700BCEA0D = {
 						CreatedOnToolsVersion = 7.0;
@@ -381,6 +403,7 @@
 					};
 					BC60AC681B94012C00BCEA0D = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = QJ7W7F4DDC;
 					};
 					BC60AC741B94012C00BCEA0D = {
 						CreatedOnToolsVersion = 7.0;
@@ -459,6 +482,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC85B3421BA921F800D18C84 /* Utilities.swift in Sources */,
+				BC85B3471BA922DE00D18C84 /* MagicIndexObject.swift in Sources */,
 				BC60AC3C1B94010700BCEA0D /* ViewController.swift in Sources */,
 				BC60AC3A1B94010700BCEA0D /* AppDelegate.swift in Sources */,
 			);
@@ -468,6 +493,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC85B3481BA922DE00D18C84 /* MagicIndexObject.swift in Sources */,
+				BC85B3431BA921F800D18C84 /* Utilities.swift in Sources */,
 				BC60AC4F1B94010700BCEA0D /* DisneyWatchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +503,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC85B3491BA922DE00D18C84 /* MagicIndexObject.swift in Sources */,
+				BC85B3441BA921F800D18C84 /* Utilities.swift in Sources */,
 				BC60AC5A1B94010700BCEA0D /* DisneyWatchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,15 +513,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4C5B861BAE354B00C19A26 /* String+Timepiece.swift in Sources */,
+				BC4C5B841BAE354B00C19A26 /* NSDateComponents+Timepiece.swift in Sources */,
+				BC85B34A1BA922DE00D18C84 /* MagicIndexObject.swift in Sources */,
 				BC60AC811B94012C00BCEA0D /* NotificationController.swift in Sources */,
 				BC60AC7F1B94012C00BCEA0D /* ExtensionDelegate.swift in Sources */,
-				BC60AC851B94012C00BCEA0D /* ComplicationController.swift in Sources */,
+				BC4C5B811BAE354B00C19A26 /* NSCalendar+Timepiece.swift in Sources */,
 				BC02E3BC1B9520B6007C15D4 /* SwiftyJSON.swift in Sources */,
+				BC4C5B851BAE354B00C19A26 /* NSTimeInterval+Timepiece.swift in Sources */,
 				BC02E3B81B951F91007C15D4 /* MagicIndexRealmObject.swift in Sources */,
+				BC4C5B801BAE354B00C19A26 /* Int+Timepiece.swift in Sources */,
 				BC60AC7D1B94012C00BCEA0D /* InterfaceController.swift in Sources */,
 				BC60AC831B94012C00BCEA0D /* GlanceController.swift in Sources */,
+				BC49C4971BAE34F60099EE28 /* IndexGet.swift in Sources */,
 				BC907B7D1B9B554D00F282FC /* DCAInterfaceController.swift in Sources */,
-				BC02E3BA1B951FBD007C15D4 /* IndexGet.swift in Sources */,
+				BC4C5B831BAE354B00C19A26 /* NSDate+Timepiece.swift in Sources */,
+				BC49C4951BAE347F0099EE28 /* ComplicationController.swift in Sources */,
+				BC4C5B821BAE354B00C19A26 /* NSCalendarUnit+Timepiece.swift in Sources */,
+				BC85B3451BA921F800D18C84 /* Utilities.swift in Sources */,
+				BC4C5B871BAE354B00C19A26 /* Duration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +608,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -613,6 +653,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -634,16 +675,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Brandon Harris (NPDDXZENYE)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/realm-cocoa/build/watchos",
-				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = DisneyWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -652,15 +693,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Brandon Harris (QJ7W7F4DDC)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/realm-cocoa/build/watchos",
-				);
+				CURRENT_PROJECT_VERSION = 5;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = DisneyWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -717,19 +758,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DisneyWatchApp",
-					Extension,
-					"$(PROJECT_DIR)/realm-cocoa/build/watchos",
 				);
 				INFOPLIST_FILE = "DisneyWatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -739,19 +782,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 5;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DisneyWatchApp",
-					Extension,
-					"$(PROJECT_DIR)/realm-cocoa/build/watchos",
 				);
 				INFOPLIST_FILE = "DisneyWatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
@@ -761,12 +806,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = YES;
 				IBSC_MODULE = DisneyWatchApp_Extension;
 				INFOPLIST_FILE = DisneyWatchApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "DisneyWatchApp/DisneyWatchApp-Bridging-Header.h";
@@ -781,13 +829,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brandon Harris (QJ7W7F4DDC)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = YES;
 				IBSC_MODULE = DisneyWatchApp_Extension;
 				INFOPLIST_FILE = DisneyWatchApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DigitalRogues.DisneyWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "DisneyWatchApp/DisneyWatchApp-Bridging-Header.h";

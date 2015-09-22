@@ -20,7 +20,7 @@
 # ipa "./app.ipa"
 
 # to provide an ipa file for TestFlight distribution, use beta_ipa
-# beta_ipa "./app.ipa"
+ beta_ipa "../DisneyWatch.ipa"
 
 # The version of your app - remove this if you provide an ipa file
 #version "1.0"

@@ -1,32 +1,31 @@
 //
 //  ComplicationController.swift
-//  DisneyWatchApp Extension
+//  DisneyWatcher WatchKit Extension
 //
-//  Created by punk on 8/30/15.
+//  Created by punk on 9/19/15.
 //  Copyright © 2015 Digital Rogues. All rights reserved.
 //
 
 import ClockKit
-import RealmSwift
 
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Timeline Configuration
-    var realmToken = NotificationToken()
+    var lastUpdated = ""
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
         handler([.None])
     }
     
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-
-        handler(nil)
+        let now = NSDate()
+        handler(now)
     }
     
     func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-
-        handler(nil)
+        let now = NSDate()
+        handler(now)
     }
     
     func getPrivacyBehaviorForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationPrivacyBehavior) -> Void) {
@@ -37,46 +36,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
         // Call the handler with the current timeline entry
-        // Call the handler with the current timeline entry
-        
-        var entry : CLKComplicationTimelineEntry?
-        let now = NSDate()
-        
-        if complication.family == .ModularLarge {
+        let api = IndexGet()
+        api.drGET(NSURL(string: "https://disney.digitalrecall.net")!) { (magicObj, error) -> Void in
             
-            //get the data from extensiondelegate after it has kicked off the timeline reload with the .extendtimeline call
-            //let myDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
+            self.lastUpdated = magicObj!.lastUpdated
             
-            do {
-                // Persist your data easily
-                let realmObj = try Realm()
-                realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
-                    var magicObj = MagicIndexRealmObject()
-                    magicObj = realmObj.objects(MagicIndexRealmObject).sorted("lastUpdated", ascending: false).first!
-                   
-                    
-                    let dlrText = magicObj.dlrIndex
-                    let dcaText = magicObj.dcaIndex
-                    // let shortText = data[ComplicationShortTextData]
-                    
-                    let textTemplate = CLKComplicationTemplateModularLargeStandardBody()
-                    textTemplate.headerTextProvider = CLKSimpleTextProvider(text:"disneyWatch")
-                    textTemplate.body1TextProvider = CLKSimpleTextProvider(text:"DLR:\(dlrText)")
-                    textTemplate.body2TextProvider = CLKSimpleTextProvider(text:"DCA:\(dcaText)")
-                    
-                    // Create the entry.
-                    entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: textTemplate)
-                    handler(entry)
-
-                })
-                
-               IndexGet.getData()
-                
-            }
-            catch{
-                print(error)
-            }
+            let entry =  self.createTimeLineEntry(magicObj!, compFamily: complication)
+            handler(entry)
         }
+        
+        
         
     }
     
@@ -94,60 +63,83 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
         // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-        //every hour NSDate(timeIntervalSinceNow: 60*60)
-        let nextUpdateDate:NSDate = NSDate(timeIntervalSinceNow: 3600)
+        // somehow get this to run 1/2 after the current entry, where entries still start at the top of the hour
         
-        handler(nextUpdateDate);
-        
+        let lastDate = NSDate(timeIntervalSince1970: Double(self.lastUpdated)!)
+        let updateTime = lastDate + 30.minutes
+        print(updateTime)
+        handler(updateTime);
     }
     
     func requestedUpdateDidBegin() {
-        print("requestedUpdatedidbeing")
+        print("requestedUpdated")
         let complicationServer = CLKComplicationServer.sharedInstance()
-        for complication in complicationServer.activeComplications {
-            complicationServer.reloadTimelineForComplication(complication)
-        }
-
-        
-        func requestedUpdateBudgetExhausted()
-        {
-                print("exhausted")
-            let complicationServer = CLKComplicationServer.sharedInstance()
-            for complication in complicationServer.activeComplications {
-                complicationServer.reloadTimelineForComplication(complication)
-            }
-
-        }
-        
-//        let myDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
-//        myDelegate.get
-        //update the data into Realm
-        
-//        do {
-//            // Persist your data easily
-//            let realmObj = try Realm()
-//            IndexGet.getData()
-//            //kick off new extended timeline
-//              realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
-//                    let complicationServer = CLKComplicationServer.sharedInstance()
-//                    for complication in complicationServer.activeComplications {
-//                        complicationServer.extendTimelineForComplication(complication)
-//                    }
-//                })
-//            
-//        }
-//        catch{
-//            print(error)
-//        }
-
+                for complication in complicationServer.activeComplications {
+                    complicationServer.reloadTimelineForComplication(complication)
+                }
 
     }
     
     // MARK: - Placeholder Templates
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
-        // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        
+        
+        switch (complication.family) {
+        case (.ModularLarge):
+            let textTemplate = CLKComplicationTemplateModularLargeStandardBody()
+            textTemplate.headerTextProvider = CLKSimpleTextProvider(text:"disneyWatch")
+            textTemplate.body1TextProvider = CLKSimpleTextProvider(text:"DLR:Loading...")
+            textTemplate.body2TextProvider = CLKSimpleTextProvider(text:"DCA:Loading...")
+            handler(textTemplate)
+        case (.CircularSmall):
+            let textTemplate = CLKComplicationTemplateCircularSmallStackText()
+            textTemplate.line1TextProvider = CLKSimpleTextProvider(text:"0")
+            textTemplate.line2TextProvider = CLKSimpleTextProvider(text:"0")
+            handler(textTemplate)
+        default:
+            print("somethings broke")
+            }
+        
+    }
+    
+    func createTimeLineEntry(magicObj:MagicIndexObject, compFamily:CLKComplication)->CLKComplicationTimelineEntry
+    {
+        let dlrText = magicObj.dlrIndex
+        let dcaText = magicObj.dcaIndex
+
+
+        print(dlrText)
+        print(dcaText)
+        
+        var entTemplate = CLKComplicationTemplate()
+        switch (compFamily.family) {
+        case (.ModularLarge):
+            let textTemplate = CLKComplicationTemplateModularLargeStandardBody()
+            textTemplate.headerTextProvider = CLKSimpleTextProvider(text:"disneyWatcher")
+            textTemplate.body1TextProvider = CLKSimpleTextProvider(text:"DLR:\(dlrText)")
+            textTemplate.body2TextProvider = CLKSimpleTextProvider(text:"DCA:\(dcaText)")
+            entTemplate = textTemplate
+
+        case (.CircularSmall):
+            let textTemplate = CLKComplicationTemplateCircularSmallStackText()
+            textTemplate.line1TextProvider = CLKSimpleTextProvider(text:"\(dlrText)")
+            textTemplate.line2TextProvider = CLKSimpleTextProvider(text:"\(dcaText)")
+            entTemplate = textTemplate
+        default:
+            print("somethings broke")
+        }
+
+        // Create the entry.
+        let entryDate = NSDate(timeIntervalSince1970: Double(magicObj.lastUpdated)!)
+        let entry = CLKComplicationTimelineEntry(date: entryDate, complicationTemplate: entTemplate)
+        return entry
+    }
+    
+    func returnTopOfHour() -> NSDate{
+        let now = NSDate()
+        let beginHour = now.beginningOfHour
+        return beginHour
     }
     
 }

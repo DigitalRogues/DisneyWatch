@@ -6,10 +6,10 @@
 //  Copyright © 2015 Digital Rogues. All rights reserved.
 //
 
-//import RealmSwift
+
 import Foundation
 
-class MagicIndexRealmObject: NSObject {
+class MagicIndexObject: NSObject {
     
     
 //    {"parks":{"date":"Saturday September 05 2015","disneyland":{"crowdIndex":"20","forecast":"yup, it’s packed","times":"9:00AM to 11:00PM"},"california_adventure":{"crowdIndex":"20","forecast":"yup, it’s packed","times":"):9:00AM to 9:00PM"}},"lastUpdated":1441470610}

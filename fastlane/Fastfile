@@ -30,7 +30,7 @@ platform :ios do
 
     # increment_build_number
 
-    gym(scheme: "DisneyWatch") # Build your app - more options available
+    #gym(scheme: "DisneyWatch") # Build your app - more options available
 
     # xctool # run the tests of your app
   end
@@ -43,8 +43,11 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    # snapshot
+    increment_build_number
     sigh
+    gym(scheme: "DisneyWatch", configuration:"Release", workspace:"DisneyWatch.xcworkspace")
+    # snapshot
+    #sigh
     deliver(beta: true)
 
     # sh "your_script.sh"
@@ -64,7 +67,7 @@ platform :ios do
 
   after_all do |lane|
     # This block is called, only if the executed lane was successful
-    
+
     # slack(
     #   message: "Successfully deployed new App Update."
     # )
@@ -80,5 +83,5 @@ platform :ios do
 end
 
 
-# More information about multiple platforms in fastlane: 
+# More information about multiple platforms in fastlane:
 # https://github.com/KrauseFx/fastlane/blob/master/docs/Platforms.md

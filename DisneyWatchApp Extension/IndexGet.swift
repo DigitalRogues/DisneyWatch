@@ -8,14 +8,12 @@
 
 import WatchKit
 import Foundation
-import RealmSwift
-import ClockKit
 
 
 class IndexGet: NSObject {
     
 
-    class  func drGET(url: NSURL, callback: (MagicObject:MagicIndexRealmObject?, NSError!) -> Void)
+    func drGET(url: NSURL, callback: (MagicObject:MagicIndexObject?, NSError!) -> Void)
     {
         
         
@@ -28,9 +26,6 @@ class IndexGet: NSObject {
         
         let task = session.dataTaskWithRequest(request) {
             (data, response, errors) in
-            
-            
-
             let json =  JSON(data: data!)
             
             
@@ -53,7 +48,7 @@ class IndexGet: NSObject {
 
            
            // print(json)
-            let disneyObject = MagicIndexRealmObject()
+            let disneyObject = MagicIndexObject()
             
             if let dlr = json["parks"]["disneyland"].dictionary{
                 //Now you got your value
@@ -95,28 +90,30 @@ class IndexGet: NSObject {
     }
     
  class  func getData(){
-        drGET(NSURL(string: "https://disney.digitalrecall.net")!) { (disneyObject, error) -> Void in
+       // drGET(NSURL(string: "https://disney.digitalrecall.net")!) { (disneyObject, error) -> Void in
             
-            //write to realm
-
+//    NSFileManager.defaultManager().createFileAtPath(savePath,contents:disneyObject, attributes:nil)
+//            
+//            Utilities.fileInDocumentsDirectory("")
             
-            do {
-                // Persist your data easily
-                let realmObj = try Realm()
-                realmObj.write{
-                    print(disneyObject)
-                    realmObj.add(disneyObject!)
-                }
-                
-            }
-            catch{
-                print(error)
-            }
+//            //write to realm
+//
+//            
+//            do {
+//                // Persist your data easily
+//                let realmObj = try Realm()
+//                realmObj.write{
+//                    print(disneyObject)
+//                    realmObj.add(disneyObject!)
+//                }
+//                
+//            }
+//            catch{
+//                print(error)
+//            }
             
         }
-        
-        
-    }
+    
 
 
 

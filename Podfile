@@ -19,6 +19,6 @@ end
 
 target 'DisneyWatchApp Extension' do
 platform :watchos, '2.0'
- pod 'Realm'
- pod 'RealmSwift'
+# pod 'Realm'
+# pod 'RealmSwift'
 end

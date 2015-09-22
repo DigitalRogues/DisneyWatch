@@ -8,37 +8,37 @@
 
 import WatchKit
 import Foundation
-import RealmSwift
+//import RealmSwift
 
 
 class GlanceController: WKInterfaceController {
 
     @IBOutlet var dlrLabel: WKInterfaceLabel!
     @IBOutlet var dcaLabel: WKInterfaceLabel!
-    var realmToken = NotificationToken()
+   // var realmToken = NotificationToken()
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        // Configure interface objects here.
-        do {
-            // Persist your data easily
-            let realmObj = try Realm()
-            //kick off new extended timeline
-            
-            realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
-                var magicObj = MagicIndexRealmObject()
-                magicObj = realmObj.objects(MagicIndexRealmObject).sorted("lastUpdated", ascending: false).first!
-                
-                self.dlrLabel.setText(magicObj.dlrIndex)
-                self.dcaLabel.setText(magicObj.dcaIndex)
-            })
-            
-            IndexGet.getData()
-            
-        }
-        catch{
-            print(error)
-        }
+//        // Configure interface objects here.
+//        do {
+//            // Persist your data easily
+//            let realmObj = try Realm()
+//            //kick off new extended timeline
+//            
+//            realmToken =  realmObj.addNotificationBlock({ (notification, realm) -> Void in
+//                var magicObj = MagicIndexRealmObject()
+//                magicObj = realmObj.objects(MagicIndexRealmObject).sorted("lastUpdated", ascending: false).first!
+//                
+//                self.dlrLabel.setText(magicObj.dlrIndex)
+//                self.dcaLabel.setText(magicObj.dcaIndex)
+//            })
+//            
+//            IndexGet.getData()
+//            
+//        }
+//        catch{
+//            print(error)
+//        }
     }
 
     override func willActivate() {
