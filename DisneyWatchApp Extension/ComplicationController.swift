@@ -84,18 +84,20 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
         
+        let dlrText =  CLKSimpleTextProvider(text: "DLR:Loading...", shortText: "0")
+        let dcaText =  CLKSimpleTextProvider(text: "DCA:Loading...", shortText: "0")
         
         switch (complication.family) {
         case (.ModularLarge):
             let textTemplate = CLKComplicationTemplateModularLargeStandardBody()
             textTemplate.headerTextProvider = CLKSimpleTextProvider(text:"disneyWatch")
-            textTemplate.body1TextProvider = CLKSimpleTextProvider(text:"DLR:Loading...")
-            textTemplate.body2TextProvider = CLKSimpleTextProvider(text:"DCA:Loading...")
+            textTemplate.body1TextProvider = dlrText
+            textTemplate.body2TextProvider = dcaText
             handler(textTemplate)
         case (.CircularSmall):
             let textTemplate = CLKComplicationTemplateCircularSmallStackText()
-            textTemplate.line1TextProvider = CLKSimpleTextProvider(text:"0")
-            textTemplate.line2TextProvider = CLKSimpleTextProvider(text:"0")
+            textTemplate.line1TextProvider = dlrText
+            textTemplate.line2TextProvider = dcaText
             handler(textTemplate)
         default:
             print("somethings broke")
@@ -105,26 +107,27 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func createTimeLineEntry(magicObj:MagicIndexObject, compFamily:CLKComplication)->CLKComplicationTimelineEntry
     {
-        let dlrText = magicObj.dlrIndex
-        let dcaText = magicObj.dcaIndex
+        let dlrText = CLKSimpleTextProvider(text: "DLR:\(magicObj.dlrIndex)", shortText: magicObj.dlrIndex)
+        let dcaText = CLKSimpleTextProvider(text: "DCA:\(magicObj.dcaIndex)", shortText: magicObj.dcaIndex)
 
 
         print(dlrText)
         print(dcaText)
         
         var entTemplate = CLKComplicationTemplate()
+
         switch (compFamily.family) {
         case (.ModularLarge):
             let textTemplate = CLKComplicationTemplateModularLargeStandardBody()
-            textTemplate.headerTextProvider = CLKSimpleTextProvider(text:"disneyWatcher")
-            textTemplate.body1TextProvider = CLKSimpleTextProvider(text:"DLR:\(dlrText)")
-            textTemplate.body2TextProvider = CLKSimpleTextProvider(text:"DCA:\(dcaText)")
+            textTemplate.headerTextProvider = CLKSimpleTextProvider(text:"DisneyWatch")
+            textTemplate.body1TextProvider = dlrText
+            textTemplate.body2TextProvider = dcaText
             entTemplate = textTemplate
 
         case (.CircularSmall):
             let textTemplate = CLKComplicationTemplateCircularSmallStackText()
-            textTemplate.line1TextProvider = CLKSimpleTextProvider(text:"\(dlrText)")
-            textTemplate.line2TextProvider = CLKSimpleTextProvider(text:"\(dcaText)")
+            textTemplate.line1TextProvider = dlrText
+            textTemplate.line2TextProvider = dcaText
             entTemplate = textTemplate
         default:
             print("somethings broke")
