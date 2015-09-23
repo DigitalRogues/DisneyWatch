@@ -45,8 +45,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             handler(entry)
         }
         
-        
-        
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
@@ -63,8 +61,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
         // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-        // somehow get this to run 1/2 after the current entry, where entries still start at the top of the hour
-        
+
+        //runs 30 minutes after the time of the update so if update was at 10, it'll run at 10:30 then 11 then 11:30 etc
         let lastDate = NSDate(timeIntervalSince1970: Double(self.lastUpdated)!)
         let updateTime = lastDate + 30.minutes
         print(updateTime)
@@ -87,23 +85,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         let dlrText =  CLKSimpleTextProvider(text: "DLR:Loading...", shortText: "0")
         let dcaText =  CLKSimpleTextProvider(text: "DCA:Loading...", shortText: "0")
         
-        switch (complication.family) {
-        case (.ModularLarge):
-            let textTemplate = CLKComplicationTemplateModularLargeStandardBody()
-            textTemplate.headerTextProvider = CLKSimpleTextProvider(text:"disneyWatch")
-            textTemplate.body1TextProvider = dlrText
-            textTemplate.body2TextProvider = dcaText
-            handler(textTemplate)
-        case (.CircularSmall):
-            let textTemplate = CLKComplicationTemplateCircularSmallStackText()
-            textTemplate.line1TextProvider = dlrText
-            textTemplate.line2TextProvider = dcaText
-            handler(textTemplate)
-        default:
-            print("somethings broke")
-            }
-        
-    }
+        let temp = createTemplate(dlrText, dcaText: dcaText, compFamily: complication)
+        handler(temp)
+        }
     
     func createTimeLineEntry(magicObj:MagicIndexObject, compFamily:CLKComplication)->CLKComplicationTimelineEntry
     {
@@ -114,6 +98,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         print(dlrText)
         print(dcaText)
         
+        let entTemplate = createTemplate(dlrText, dcaText:dcaText, compFamily: compFamily)
+        
+        // Create the entry.
+        let entryDate = NSDate(timeIntervalSince1970: Double(magicObj.lastUpdated)!)
+        let entry = CLKComplicationTimelineEntry(date: entryDate, complicationTemplate: entTemplate)
+        return entry
+    }
+    
+    func createTemplate(dlrText:CLKSimpleTextProvider, dcaText:CLKSimpleTextProvider, compFamily:CLKComplication) -> CLKComplicationTemplate{
+       
         var entTemplate = CLKComplicationTemplate()
 
         switch (compFamily.family) {
@@ -123,20 +117,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             textTemplate.body1TextProvider = dlrText
             textTemplate.body2TextProvider = dcaText
             entTemplate = textTemplate
-
+            
         case (.CircularSmall):
             let textTemplate = CLKComplicationTemplateCircularSmallStackText()
             textTemplate.line1TextProvider = dlrText
             textTemplate.line2TextProvider = dcaText
             entTemplate = textTemplate
+            
+        case (.UtilitarianSmall):
+            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+            let string = "D:\(dlrText.shortText!) • C:\(dcaText.shortText!)"
+            textTemplate.textProvider = CLKSimpleTextProvider(text: string)
+            entTemplate = textTemplate
+            
         default:
             print("somethings broke")
         }
+        
+        return entTemplate
 
-        // Create the entry.
-        let entryDate = NSDate(timeIntervalSince1970: Double(magicObj.lastUpdated)!)
-        let entry = CLKComplicationTimelineEntry(date: entryDate, complicationTemplate: entTemplate)
-        return entry
     }
     
     func returnTopOfHour() -> NSDate{
