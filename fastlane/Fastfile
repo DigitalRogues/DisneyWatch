@@ -48,7 +48,7 @@ platform :ios do
     gym(scheme: "DisneyWatch", configuration:"Release", workspace:"DisneyWatch.xcworkspace")
     # snapshot
     #sigh
-    deliver(beta: true)
+    testflight
 
     # sh "your_script.sh"
     # You can also use other beta testing services here

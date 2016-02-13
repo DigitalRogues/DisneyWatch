@@ -18,14 +18,15 @@ class IndexGet: NSObject {
         
         
         let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
-        sessionConfig.timeoutIntervalForRequest = 20
+        sessionConfig.timeoutIntervalForRequest = 40
         let session = NSURLSession(configuration: sessionConfig)
         let request = NSMutableURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 200)
-        //request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.HTTPMethod = "GET"
         
         let task = session.dataTaskWithRequest(request) {
             (data, response, errors) in
+            
             let json =  JSON(data: data!)
             
             
@@ -50,7 +51,7 @@ class IndexGet: NSObject {
            // print(json)
             let disneyObject = MagicIndexObject()
             
-            if let dlr = json["parks"]["disneyland"].dictionary{
+            if let dlr = json["dlr"].dictionary{
                 //Now you got your value
                 //print(dlr)
                 disneyObject.dlrIndex = (dlr["crowdIndex"]?.stringValue)!
@@ -59,18 +60,19 @@ class IndexGet: NSObject {
             }
             
             
-            if let dca = json["parks"]["california_adventure"].dictionary{
+            if let dca = json["dca"].dictionary{
                 //print(dca)
                 disneyObject.dcaIndex = (dca["crowdIndex"]?.stringValue)!
                 disneyObject.dcaOpen = (dca["times"]?.stringValue)!
                 disneyObject.dcaForecast = (dca["forecast"]?.stringValue)!
             }
             
-        
-            if let lastUpdated = json["lastUpdated"].number{
-               // print(lastUpdated)
-                disneyObject.lastUpdated = lastUpdated.stringValue
+            
+            if let lastUpdated_unix = json["lastUpdated_unix"].number{
+                // print(lastUpdated)
+                disneyObject.lastUpdated = lastUpdated_unix.stringValue
             }
+            
             if let date = json["date"].number{
                 // print(lastUpdated)
                 disneyObject.date = date.stringValue

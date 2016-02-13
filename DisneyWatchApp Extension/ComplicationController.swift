@@ -37,7 +37,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
         // Call the handler with the current timeline entry
         let api = IndexGet()
-        api.drGET(NSURL(string: "https://disney.digitalrecall.net")!) { (magicObj, error) -> Void in
+        api.drGET(NSURL(string: "https://disney.digitalrecall.net/json")!) { (magicObj, error) -> Void in
             
             self.lastUpdated = magicObj!.lastUpdated
             

@@ -24,7 +24,10 @@ class MagicIndexObject: NSObject {
     dynamic var dcaForecast:String = ""
     
     dynamic var lastUpdated:String = ""
+    dynamic var lastUpdated_unix:String = ""
     dynamic var date:String = ""
+    
+    dynamic var closed:String = ""
 
     
 // Specify properties to ignore (Realm won't persist these)
